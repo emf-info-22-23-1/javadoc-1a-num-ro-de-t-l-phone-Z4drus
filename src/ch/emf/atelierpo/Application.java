@@ -14,7 +14,7 @@ public class Application {
     public static void main(String[] args) {
         Worker wrk = new Worker();
      
-        if (wrk.controleNumeroTelMobile("VALEUR 1", "VALEUR 2")) {
+        if (wrk.controleNumeroTelMobile("+4177", "333 33 33")) {
             System.out.println("TEL MOBILE OK");
         } else {
             System.out.println("TEL MOBILE NOK");
