@@ -28,17 +28,27 @@ public class Worker {
         boolean bprefix = false;
         boolean bnumero = false;
 
-        if (prefix.equals("+4176") || prefix.equals("+4177") || prefix.equals("+4178") || prefix.equals("+4179")) {
-            bprefix = true;
+        try {
+            if (prefix.equals("+4176") || prefix.equals("+4177") || prefix.equals("+4178") || prefix.equals("+4179")) {
+                bprefix = true;
+            }
+        } catch (NullPointerException e) {
+            System.out.println("Erreur");
+            return false;
+
         }
 
-        // Vérifier si le numéro est valide
-        if (numero.length() != 9) { // Vérifier la longueur totale
+        try {
+            if (numero.length() != 9) { // Vérifier la longueur totale
+                return false;
+            }
+        } catch (NullPointerException e) {
+            System.out.println("Erreur");
             return false;
         }
 
         try {
-            //Enleve les espacements
+            // Enleve les espacements
             String numeroSansEspace = numero.replace(" ", "");
 
             Integer.parseInt(numeroSansEspace);
@@ -46,8 +56,7 @@ public class Worker {
                 return false; // Les espaces doivent être aux positions 3 et 6
             }
             bnumero = true;
-        } catch (NumberFormatException e) {
-            e.getMessage();
+        } catch (Exception e) {
             System.out.println("Erreur");
         }
 
