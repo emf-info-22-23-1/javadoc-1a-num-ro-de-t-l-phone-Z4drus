@@ -33,7 +33,6 @@ public class Worker {
                 bprefix = true;
             }
         } catch (NullPointerException e) {
-            System.out.println("Erreur");
             return false;
 
         }
@@ -43,7 +42,6 @@ public class Worker {
                 return false;
             }
         } catch (NullPointerException e) {
-            System.out.println("Erreur");
             return false;
         }
 
@@ -57,7 +55,7 @@ public class Worker {
             }
             bnumero = true;
         } catch (Exception e) {
-            System.out.println("Erreur");
+            return false;
         }
 
         if (bnumero == true && bprefix == true) {
